@@ -25,10 +25,9 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 	
 );
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our @flattened;
-# Preloaded methods go here.
 
 sub this {
   my (undef, $href, $field, $depth, $flat_rec) = @_;
@@ -60,7 +59,6 @@ sub this {
   }
 
   @flattened;
-
 }
 
 1;
@@ -83,6 +81,46 @@ Data::Hash::Flatten - isomorphic denormalization of nested HoH into AoH
   
   use Data::Dumper;
   print Dumper(\@a);
+
+  $VAR1 = [
+          {
+            'hits' => 7,
+            'date' => '6/22/98',
+            'name' => 'jimm',
+            'file' => 'z.tcl'
+          },
+          {
+            'hits' => 8,
+            'date' => '6/22/98',
+            'name' => 'jimm',
+            'file' => 'y.pyt'
+          },
+          {
+            'hits' => 9,
+            'date' => '6/22/98',
+            'name' => 'jimm',
+            'file' => 'x.prl'
+          },
+          {
+            'hits' => 3,
+            'date' => '5/27/96',
+            'name' => 'bill',
+            'file' => 'c.lsp'
+          },
+          {
+            'hits' => 2,
+            'date' => '5/27/96',
+            'name' => 'bill',
+            'file' => 'b.txt'
+          },
+          {
+            'hits' => 1,
+            'date' => '5/27/96',
+            'name' => 'bill',
+            'file' => 'a.dat'
+          }
+        ];
+
 
 
 =head1 DESCRIPTION
